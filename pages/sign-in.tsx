@@ -9,7 +9,7 @@ const Signin: NextPage = () => {
 
   async function login(){
     if(email === undefined || password === undefined)  return 
-    const notification = toast.loading('Minting...', {
+    const notification = toast.loading('登入中...', {
       style: {
           background: 'white',
           color: 'green',
