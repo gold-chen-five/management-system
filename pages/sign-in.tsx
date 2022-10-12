@@ -26,7 +26,6 @@ const Signin: NextPage = () => {
       })
       
       if(res.status === 200){
-        toast.dismiss(notification)
         toast('登入成功',{
           duration: 3000,
           style:{
@@ -58,6 +57,9 @@ const Signin: NextPage = () => {
       })
       setEmail('')
       setPassword('')
+    }
+    finally{
+      toast.dismiss(notification)
     }
   }
 
