@@ -9,15 +9,15 @@ const Signin: NextPage = () => {
 
   async function login(){
     if(email === undefined || password === undefined)  return 
-    const notification = toast.loading('登入中...', {
-      style: {
-          background: 'white',
-          color: 'green',
-          fontWeight: 'bolder',
-          fontSize: '17px',
-          padding: '20px'
-      }
-    })
+      const notification = toast.loading('登入中...', {
+        style: {
+            background: 'white',
+            color: 'green',
+            fontWeight: 'bolder',
+            fontSize: '17px',
+            padding: '20px'
+        }
+      })
     try{
       const res = await fetch('/api/users/signin',{
         method: 'POST',
@@ -38,7 +38,7 @@ const Signin: NextPage = () => {
         })
         setEmail('')
         setPassword('')
-        setTimeout(() => router.push('/dashboard'),1000)
+        setTimeout(() => router.push('/dashboard'),300)
       }else{
         const info = await res.json()
         throw new Error(info)
