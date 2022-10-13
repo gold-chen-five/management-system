@@ -10,10 +10,28 @@ import UserDashboard from '../src/frontend/components/UserDashboard'
 import ManagerDashboard from '../src/frontend/components/ManagerDashboard'
 import AddUserDashboard from '../src/frontend/components/AddUserDashboard'
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 
 const Dashboard: NextPage<{permission: string,id: string,name: string}> = ({permission,id,name}) => {
+    const router = useRouter()
     const [selectDashboard,setSelectDashboard] = useState<string>('UserDashboard')
     
+    const logout = async () => {
+       try{
+        const res = await fetch('/api/users/logout')
+        const resJ = await res.json()
+        if( res.status === 200){
+            router.push('/')
+        }else{
+            throw new Error('error')
+        }
+       }
+       catch(err){
+        router.push('/')
+       }
+
+    }
+
     useEffect(() => setSelectDashboard('Rent'),[])
     return (
         <>
@@ -43,6 +61,11 @@ const Dashboard: NextPage<{permission: string,id: string,name: string}> = ({perm
                             增加使用者
                         </button>
                     }
+                    <button className='w-1/2 h-10 border border-[#3F3F46] rounded-lg font-fontJapan font-semibold text-[#D4D4D2] text-center hover:bg-[#303035]'
+                        onClick={logout}
+                    >
+                        登出
+                    </button>
                 </section>
                 <section className='w-[85%] h-full '>
                    { 
