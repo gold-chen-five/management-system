@@ -36,9 +36,9 @@ const Home: NextPage = () => {
 
       <main className='w-full h-screen bg-[#202023] flex justify-center items-center space-x-24'>
         <Toaster position='bottom-center'/>
-        <Image src="/P.jpg" alt="" width={400} height={400} className="rounded-2xl"/>
+        <Image src="/LOGO.png" alt="" width={600} height={400} className="rounded-2xl"/>
         <div className='w-1/5 space-y-14'>
-          <p className='text-white font-fontJapan font-bold text-4xl w-full text-center'>不要懷疑,小p好帥!</p>
+          <p className='text-white font-fontJapan font-bold text-4xl w-full text-center'>出借系統</p>
           <div className='flex space-x-4'>
             <div className='bg-[#34343e] w-1/2 h-14 rounded-lg font-fontJapan font-bold text-[#D4D4D2] flex justify-center items-center hover:bg-[#191c1e] cursor-pointer'
               onClick={enterDashBoard}
