@@ -29,7 +29,6 @@ const Dashboard: NextPage<{permission: string,id: string,name: string}> = ({perm
        catch(err){
         router.push('/')
        }
-
     }
 
     useEffect(() => setSelectDashboard('Rent'),[])
