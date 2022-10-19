@@ -23,6 +23,7 @@ export const deleteCookie = (res: NextApiResponse, cookieName: string) => {
         path: "/",
         secure: process.env.NODE_ENV !== "development",//set cookie https or http
     })
+    console.log('logout cookie')
     res.setHeader('Set-Cookie', serialised)
 }
 
