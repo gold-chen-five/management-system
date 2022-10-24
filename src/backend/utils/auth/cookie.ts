@@ -17,7 +17,7 @@ export const setCookie = (res: NextApiResponse,token: string) => {
 
 export const deleteCookie = (res: NextApiResponse, cookieName: string) => {
     const serialised = serialize(`${cookieName}`,'',{
-        maxAge: 0,
+        maxAge: -1,
         httpOnly: true,
         sameSite: "strict",
         path: "/",
@@ -25,6 +25,8 @@ export const deleteCookie = (res: NextApiResponse, cookieName: string) => {
     })
     console.log('logout cookie')
     res.setHeader('Set-Cookie', serialised)
+    //res.writeHead(302, { Location: '/api/users/logout' });
+    //res.end()
 }
 
 export const cookieMiddleware = async (req: NextApiRequest):Promise<jwt.VerifyErrors | TokenInterface | Error> => {
