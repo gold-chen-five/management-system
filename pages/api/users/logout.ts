@@ -11,9 +11,9 @@ export default async function handler(
 ) {
     try{
         await deleteCookie(res,'token')
-        res.status(200).json({ message: 'logout' })
+        return res.status(200).json({ message: 'logout' })
     }
     catch(err: any){
-        res.status(500).json({message: err.message})
+        return res.status(500).json({message: err.message})
     }  
 }
