@@ -6,7 +6,7 @@ import { verifyToken } from '../../utils/auth/token'
 
 export const setCookie = (res: NextApiResponse,token: string) => {
     const serialised = serialize('token', token, {
-        maxAge: 60 * 60 * 24 * 30,
+        maxAge: 60 * 60 * 24 * 365,
         httpOnly: true,
         sameSite: "strict",
         path: "/",
@@ -25,9 +25,6 @@ export const deleteCookie = (res: NextApiResponse, cookieName: string) => {
     })
     console.log('logout cookie')
     res.setHeader('Set-Cookie', serialised)
-   
-    //res.writeHead(302, { Location: '/api/users/logout' });
-    //res.end()
 }
 
 export const cookieMiddleware = async (req: NextApiRequest):Promise<jwt.VerifyErrors | TokenInterface | Error> => {
