@@ -18,7 +18,11 @@ const Dashboard: NextPage<{permission: string,id: string,name: string}> = ({perm
     
     const logout = async () => {
        try{
-        const res = await fetch('/api/users/logout')
+        const res = await fetch('/api/users/logout',{
+            method: 'POST',
+            body: JSON.stringify({key: 'static_key'}),
+            headers: {'Content-Type': 'application/json'}
+        })
         const resJ = await res.json()
         if( res.status === 200){
             router.push('/')

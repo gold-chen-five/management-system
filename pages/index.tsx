@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import toast, { Toaster } from 'react-hot-toast'
 import { useRouter } from 'next/router'
-
+import { GetStaticProps } from 'next'
 const Home: NextPage = () => {
   const router = useRouter()
   const enterDashBoard = () => {
@@ -58,3 +58,9 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+export const getStaticProps:GetStaticProps = async (context) => {
+  return {
+    props: {}, // will be passed to the page component as props
+  }
+}
