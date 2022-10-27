@@ -9,7 +9,7 @@ const ShowApplicationList:React.FC<{
     setItemClick: React.Dispatch<React.SetStateAction<boolean>>
   }> = ({applicationList,setItemInfo,itemClick,setItemClick}) => {
     return(
-      <div className='w-4/5 min-h-screen flex flex-col items-end space-y-4 pt-14 pr-24 sm:w-full sm:pr-0'>
+      <div className='w-4/5 min-h-full flex flex-col items-end space-y-4 pt-14 pr-24 pb-14 sm:w-full sm:pr-0'>
         {
           applicationList?.map((item,i) => <ListItemList key={uuidv4()} item={item} setItemInfo={setItemInfo} itemClick={itemClick} setItemClick={setItemClick}/>)
         }

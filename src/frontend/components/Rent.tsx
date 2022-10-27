@@ -156,7 +156,7 @@ const Rent:React.FC<{id:string,name:string}> = ({id,name}) => {
     },[returnBack])
 
     return (
-        <div className='w-full h-full flex flex-col items-center pt-10 space-y-4 sm:pt-28'>
+        <div className='w-full h-full flex flex-col items-center pt-10 pb-10 space-y-4 sm:pt-28'>
             <Toaster position='top-center'/>
             <input type="text" className='bg-[#27272A] w-1/2 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold sm:w-5/6'
                 placeholder='項次'
