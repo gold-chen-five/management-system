@@ -106,7 +106,7 @@ function AddUserDashboard() {
     }
   },[allUsers,dashboardSelect])
   return (
-    <main className='flex flex-col items-center justify-center space-y-4 h-full w-full sm:pt-40'>
+    <main className='flex flex-col items-center justify-center space-y-4 h-screen w-full'>
       <Toaster position='top-center'/>
       <div className='flex w-1/3 justify-center space-x-5 sm:w-4/5'>
         <button className={`${dashboardSelect === 'add' ? 'bg-[#161617]' : 'bg-[#27272A]'}  w-1/3 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold`}
