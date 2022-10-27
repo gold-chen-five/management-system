@@ -38,12 +38,12 @@ function ManagerDashboard() {
   },[])
 
   return (
-    <main className='w-full h-full'>
+    <main className='w-full min-h-screen'>
       {
         itemClick ? <ItemInfo item={itemInfo} setItemClick={setItemClick}/> : 
-        <div className='w-full h-full flex'>
+        <div className='w-full h-full flex sm:flex-col-reverse sm:items-center'>
           <ShowApplicationList applicationList={applicationList} setItemInfo={setItemInfo} itemClick={itemClick} setItemClick={setItemClick}/>
-          <div className='w-1/5 mr-6 mt-10 space-x-4'>
+          <div className='w-1/5 mr-6 mt-10 space-x-4 sm:mr-0 sm:mt-20 sm:w-4/5 sm:flex sm:justify-center'>
             <select name="" id="" className='bg-[#27272A] w-1/3 h-8 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold'
               onChange={(e) => setApproval(e.target.value)}
             >

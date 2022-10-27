@@ -29,16 +29,16 @@ const UserDashboard: React.FC<{id:string,name:string}> = ({id,name}) => {
   },[approval])
 
   return (
-    <main className='w-full h-full pt-14'>
+    <main className='w-full h-full pt-14 sm:pt-24'>
       {
         itemClick ? <ItemInfo item={itemInfo} setItemClick={setItemClick}/> : 
         <div className='w-full h-full flex'>
-          <div className='flex flex-col items-center w-4/5 space-y-4'>
+          <div className='flex flex-col items-center w-4/5 space-y-4 sm:3/4'>
           {
             applicationList?.map((item,i) => 
               <div key={uuidv4()} 
                 className={
-                  `${item.returned ? 'bg-[#5ba3ec]' : item.approval ? 'bg-[#04AA6D]' : 'bg-[#FF5151]'} w-3/5 h-10 text-[#D4D4D2]  border border-[#3F3F46] rounded-lg outline-none  pl-4 pr-4 font-fontJapan font-semibold flex flex-col justify-center cursor-pointer text-center`
+                  `${item.returned ? 'bg-[#5ba3ec]' : item.approval ? 'bg-[#04AA6D]' : 'bg-[#FF5151]'} w-3/5 h-10 text-[#D4D4D2]  border border-[#3F3F46] rounded-lg outline-none  pl-4 pr-4 font-fontJapan font-semibold flex flex-col justify-center cursor-pointer text-center sm:w-5/6`
                 }
                 onClick={() => itemOnclick(item)}
               >
@@ -48,8 +48,8 @@ const UserDashboard: React.FC<{id:string,name:string}> = ({id,name}) => {
           }
           </div>
     
-          <div className='w-1/5'>
-            <select name="" id="" className='bg-[#27272A] w-1/3 h-8 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold'
+          <div className='w-1/5 sm:1/4'>
+            <select name="" id="" className='bg-[#27272A] w-1/3 h-8 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold sm:w-5/6 sm:text-sm sm:pl-1 sm:pr-1 '
               onChange={(e) => setApproval(e.target.value)}
             >
               <option value="all">全部</option>
@@ -59,7 +59,6 @@ const UserDashboard: React.FC<{id:string,name:string}> = ({id,name}) => {
             </select>
           </div>
         </div>
-          
       }
      
     </main>

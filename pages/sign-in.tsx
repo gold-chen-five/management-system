@@ -67,18 +67,18 @@ const Signin: NextPage = () => {
     <>
       <main className='bg-[#202023] h-screen w-full justify-center items-center flex'>
         <Toaster position='bottom-center'/>
-        <div className='bg-[#27272A] h-1/3 w-1/4 border-[#3F3F46] border rounded-lg flex flex-col justify-center items-center'>
-          <input type="text" className='bg-[#27272A] w-1/2 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none mb-4 text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold'
+        <div className='bg-[#27272A] h-1/3 w-1/4 border-[#3F3F46] border rounded-lg flex flex-col justify-center items-center sm:w-5/6'>
+          <input type="text" className='bg-[#27272A] w-1/2 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none mb-4 text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold sm:w-4/5'
             placeholder='信箱'
             onChange={e => setEmail(e.target.value)}
             value={email}
           />
-          <input type="password" className='bg-[#27272A] w-1/2 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none mb-6 text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold'
+          <input type="password" className='bg-[#27272A] w-1/2 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none mb-6 text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold sm:w-4/5'
             placeholder='密碼'
             onChange={e => setPassword(e.target.value)}
             value={password}
           />
-          <button className='w-1/3 h-10 border border-[#3F3F46] rounded-lg font-fontJapan font-semibold text-[#D4D4D2] text-center'
+          <button className='w-1/3 h-10 border border-[#3F3F46] rounded-lg font-fontJapan font-semibold text-[#D4D4D2] text-center sm:w-1/2'
             onClick={() => login()}
           >登入</button>
         </div>

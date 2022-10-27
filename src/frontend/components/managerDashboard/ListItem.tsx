@@ -76,21 +76,24 @@ const ListItemList:React.FC<{
    
     
     return(
-        <div className='w-full flex justify-end space-x-4'>
-            <div className={`${bgColor} w-3/5 h-10 text-[#D4D4D2]  border border-[#3F3F46] rounded-lg outline-none  pl-4 pr-4 font-fontJapan font-semibold flex flex-col justify-center cursor-pointer text-center`}
+        <div className='w-full flex justify-end space-x-4 sm:flex-col sm:items-center sm:space-x-0 sm:space-y-2 sm:mb-2'>
+            <div className={`${bgColor} w-3/5 h-10 text-[#D4D4D2]  border border-[#3F3F46] rounded-lg outline-none pl-4 pr-4 font-fontJapan font-semibold flex flex-col justify-center cursor-pointer text-center sm:w-4/5 sm:h-fit sm:min-h-[3rem] sm:py-2`}
                 onClick={itemOnclick}
             >
                 {item.item} / {item.applicant} / {item.project}
             </div>
-            <button className='w-20 h-10 border border-[#3F3F46] rounded-lg font-fontJapan font-semibold text-[#D4D4D2] text-center hover:bg-[#303035]'
-            onClick={() => returnProduct(item._id)}
-            >歸還</button>
-            <button className='w-20 h-10 border border-[#3F3F46] rounded-lg font-fontJapan font-semibold text-[#D4D4D2] text-center hover:bg-[#303035]'
-            onClick={() => acceptApproval(item._id)}
-            >簽核同意</button>
-            <button className='w-20 h-10 border border-[#3F3F46] rounded-lg font-fontJapan font-semibold text-[#D4D4D2] text-center hover:bg-[#303035]'
-            onClick={() => disagreeApproval(item._id)}
-            >未簽核</button>
+            <div className="w-1/4 flex justify-center space-x-4 sm:w-full">
+                <button className='w-20 h-10 border border-[#3F3F46] rounded-lg font-fontJapan font-semibold text-[#D4D4D2] text-center hover:bg-[#303035]'
+                onClick={() => returnProduct(item._id)}
+                >歸還</button>
+                <button className='w-20 h-10 border border-[#3F3F46] rounded-lg font-fontJapan font-semibold text-[#D4D4D2] text-center hover:bg-[#303035]'
+                onClick={() => acceptApproval(item._id)}
+                >簽核同意</button>
+                <button className='w-20 h-10 border border-[#3F3F46] rounded-lg font-fontJapan font-semibold text-[#D4D4D2] text-center hover:bg-[#303035]'
+                onClick={() => disagreeApproval(item._id)}
+                >未簽核</button>
+            </div>
+           
         </div>
     )
 

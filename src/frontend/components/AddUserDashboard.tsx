@@ -106,9 +106,9 @@ function AddUserDashboard() {
     }
   },[allUsers,dashboardSelect])
   return (
-    <main className='flex flex-col items-center justify-center space-y-4 h-full w-full'>
+    <main className='flex flex-col items-center justify-center space-y-4 h-full w-full sm:pt-40'>
       <Toaster position='top-center'/>
-      <div className='flex w-1/3 justify-center space-x-5'>
+      <div className='flex w-1/3 justify-center space-x-5 sm:w-4/5'>
         <button className={`${dashboardSelect === 'add' ? 'bg-[#161617]' : 'bg-[#27272A]'}  w-1/3 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold`}
           onClick={() => dashboardOnclick('add')}
         >新增</button>
@@ -118,38 +118,38 @@ function AddUserDashboard() {
       </div>
       {
         dashboardSelect === 'update' ?
-        <select name="" id="" className='bg-[#27272A] w-1/3 h-10 border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold'
+        <select name="" id="" className='bg-[#27272A] w-1/3 h-10 border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold sm:w-4/5'
           onChange={(e) => findEmailByName(e.target.value)}
         >
           {
             allUsers?.map((user,item) => <option value={user.name} key={user._id}>{user.name}</option>)
           }
         </select> : 
-        <input type="text" className='bg-[#27272A] w-1/3 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold'
+        <input type="text" className='bg-[#27272A] w-1/3 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold sm:w-4/5'
           placeholder='名字'
           onChange={e => setName(e.target.value)}
           value={name}
         />
       }
       
-      <input type="text" className='bg-[#27272A] w-1/3 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold'
+      <input type="text" className='bg-[#27272A] w-1/3 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold sm:w-4/5'
           placeholder='信箱'
           onChange={e => setEmail(e.target.value)}
           value={email}
           disabled={dashboardSelect === 'update' ? true : false}
         />
-      <input type="text" className='bg-[#27272A] w-1/3 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold'
+      <input type="text" className='bg-[#27272A] w-1/3 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold sm:w-4/5'
         placeholder='密碼'
         onChange={e => setPassword(e.target.value)}
         value={password}
       />
-      <select name="" id="" className='bg-[#27272A] w-1/3 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold'
+      <select name="" id="" className='bg-[#27272A] w-1/3 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold sm:w-4/5'
         onChange={e => setPermission(e.target.value)}
       >
         <option value="manager">管理者</option>
         <option value="user">使用者</option>
       </select>
-      <button className='w-1/3 h-10 border border-[#3F3F46] rounded-lg font-fontJapan font-semibold text-[#D4D4D2] text-center'
+      <button className='w-1/3 h-10 border border-[#3F3F46] rounded-lg font-fontJapan font-semibold text-[#D4D4D2] text-center sm:w-4/5'
         onClick={OnclickUser}
       >{dashboardSelect === 'update' ? '修改' : '新增'}</button>
     </main>

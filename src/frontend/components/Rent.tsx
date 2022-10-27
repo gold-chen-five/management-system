@@ -156,34 +156,34 @@ const Rent:React.FC<{id:string,name:string}> = ({id,name}) => {
     },[returnBack])
 
     return (
-        <div className='w-full h-full flex flex-col items-center pt-10 space-y-4'>
+        <div className='w-full h-full flex flex-col items-center pt-10 space-y-4 sm:pt-28'>
             <Toaster position='top-center'/>
-            <input type="text" className='bg-[#27272A] w-1/2 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold'
+            <input type="text" className='bg-[#27272A] w-1/2 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold sm:w-5/6'
                 placeholder='項次'
                 onChange={e => setLine(e.target.value)}
                 value={line}
             />
-            <input type="text" className='bg-[#27272A] w-1/2 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold'
+            <input type="text" className='bg-[#27272A] w-1/2 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold sm:w-5/6'
                 placeholder='項目'
                 onChange={e => setItem(e.target.value)}
                 value={item}
             />
-            <input type="text" className='bg-[#27272A] w-1/2 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold'
+            <input type="text" className='bg-[#27272A] w-1/2 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold sm:w-5/6'
                 placeholder='規格'
                 onChange={e => setSpecification(e.target.value)}
                 value={specification}
             />
-            <input type="text" className='bg-[#27272A] w-1/2 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold'
+            <input type="text" className='bg-[#27272A] w-1/2 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold sm:w-5/6'
                 placeholder='專案項目'
                 onChange={e => setProject(e.target.value)}
                 value={project}
             />
-            <input type="text" className='bg-[#27272A] w-1/2 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold'
+            <input type="text" className='bg-[#27272A] w-1/2 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold sm:w-5/6'
                 placeholder='序號'
                 onChange={e => setSerialNum(e.target.value)}
                 value={serialNum}
             />
-            <div className='bg-[#27272A] w-1/2 h-10  border border-[#3F3F46] rounded-lg outline-none  pl-4 pr-4 font-fontJapan font-semibold flex flex-col justify-center cursor-pointer'>
+            <div className='bg-[#27272A] w-1/2 h-10  border border-[#3F3F46] rounded-lg outline-none  pl-4 pr-4 font-fontJapan font-semibold flex flex-col justify-center cursor-pointer sm:w-5/6'>
                 <DatePicker 
                     render={(value:any, openCalender:any) => {
                         return (
@@ -204,7 +204,7 @@ const Rent:React.FC<{id:string,name:string}> = ({id,name}) => {
                 />
             </div>
 
-            <select name="" id="" className='bg-[#27272A] w-1/2 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold'
+            <select name="" id="" className='bg-[#27272A] w-1/2 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold sm:w-5/6'
                 onChange={e => setBring(e.target.value)}
                 value={bring}
             >
@@ -212,7 +212,7 @@ const Rent:React.FC<{id:string,name:string}> = ({id,name}) => {
                 <option value="館外攜出">館外攜出</option>
             </select>
 
-            <select name="" id="" className='bg-[#27272A] w-1/2 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold'
+            <select name="" id="" className='bg-[#27272A] w-1/2 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold sm:w-5/6'
                 onChange={e => setReturnBack(e.target.value)}
                 value={returnBack}
             >
@@ -224,7 +224,7 @@ const Rent:React.FC<{id:string,name:string}> = ({id,name}) => {
             
             {
                 returnBack === "歸還" && 
-                <div className='bg-[#27272A] w-1/2 h-10  border border-[#3F3F46] rounded-lg outline-none  pl-4 pr-4 font-fontJapan font-semibold flex flex-col justify-center cursor-pointer'>
+                <div className='bg-[#27272A] w-1/2 h-10  border border-[#3F3F46] rounded-lg outline-none  pl-4 pr-4 font-fontJapan font-semibold flex flex-col justify-center cursor-pointer sm:w-5/6'>
                     <DatePicker 
                         render={(value:any, openCalender:any) => {
                             return (
@@ -247,7 +247,7 @@ const Rent:React.FC<{id:string,name:string}> = ({id,name}) => {
 
             {
                 returnBack === "其他" && 
-                <input type="text" className='bg-[#27272A] w-1/2 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold'
+                <input type="text" className='bg-[#27272A] w-1/2 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold sm:w-5/6'
                     placeholder='其他的原因'
                     onChange={e => setOtherReason(e.target.value)}
                     value={otherReason}

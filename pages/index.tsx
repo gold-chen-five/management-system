@@ -34,10 +34,10 @@ const Home: NextPage = () => {
         />
       </Head>
 
-      <main className='w-full h-screen bg-[#202023] flex justify-center items-center space-x-24'>
+      <main className='w-full h-screen bg-[#202023] flex justify-center items-center space-x-24 sm:flex-col sm:space-x-0'>
         <Toaster position='bottom-center'/>
         <Image src="/LOGO.png" alt="" width={600} height={400} className="rounded-2xl"/>
-        <div className='w-1/5 space-y-14'>
+        <div className='w-1/5 space-y-14 sm:w-2/3'>
           <p className='text-white font-fontJapan font-bold text-4xl w-full text-center'>出借系統</p>
           <div className='flex space-x-4'>
             <div className='bg-[#34343e] w-1/2 h-14 rounded-lg font-fontJapan font-bold text-[#D4D4D2] flex justify-center items-center hover:bg-[#191c1e] cursor-pointer'
