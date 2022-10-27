@@ -1,6 +1,6 @@
 import type { NextApiRequest,NextApiResponse } from 'next'
 import User from '../../models/user'
-import {UserInterface,SigninInterface,GetPermissionInterface} from '../users/user.interface'
+import {UserInterface,SigninInterface,GetAllUserInterface} from '../users/user.interface'
 import connectMongo from '../../utils/connectMongo';
 import hashPassword from '../../utils/auth/hashPassword';
 import isValidPassword from '../../utils/auth/isValidPassword';
@@ -28,6 +28,26 @@ export async function addUser(req: NextApiRequest){
         throw new Error('email already exist')
     }
 }
+
+export async function updateUser(req: NextApiRequest){
+    const body:UserInterface = req.body
+
+    //connect mongo 
+    await connectMongo()
+
+    //update user
+    try{
+        const password = await hashPassword(body.password)
+        const user = await User.findOne({email: body.email})
+        user.password = password
+        user.permission = body.permission
+        await user.save()
+    }
+    catch(err: any){
+        throw new Error('email already exist')
+    }
+
+} 
 
 export async function signIn(req: NextApiRequest, res: NextApiResponse ){
     const body: SigninInterface = req.body
@@ -65,6 +85,20 @@ export async function getPermission(id: Schema.Types.ObjectId):Promise<string>{
         try{
             const user = await User.findOne({ _id: id })
             return resolve(user.permission)
+        }
+        catch(err: any){
+            return reject('user not found')
+        }
+    })
+}
+export async function getAllUser():Promise<GetAllUserInterface[]>{
+    //connect mongo 
+    await connectMongo()
+
+    return new Promise(async(resolve,reject) => {
+        try{
+            const user = await User.find({},"-password")
+            return resolve(user)
         }
         catch(err: any){
             return reject('user not found')

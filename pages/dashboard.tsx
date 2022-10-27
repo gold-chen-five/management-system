@@ -61,7 +61,7 @@ const Dashboard: NextPage<{permission: string,id: string,name: string}> = ({perm
                         permission === 'manager' && <button className='w-1/2 h-10 border border-[#3F3F46] rounded-lg font-fontJapan font-semibold text-[#D4D4D2] text-center hover:bg-[#303035]'
                             onClick={() => setSelectDashboard('AddUserDashboard')}
                         >
-                            增加使用者
+                            新增/修改使用者
                         </button>
                     }
                     <button className='w-1/2 h-10 border border-[#3F3F46] rounded-lg font-fontJapan font-semibold text-[#D4D4D2] text-center hover:bg-[#303035]'
