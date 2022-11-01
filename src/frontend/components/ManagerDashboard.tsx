@@ -1,5 +1,5 @@
 import type { NextPage,GetServerSideProps } from 'next'
-import React,{useLayoutEffect,useState,useEffect} from 'react'
+import React,{useLayoutEffect,useState,useEffect,useContext} from 'react'
 import { ApplicationListInterface } from '../../frontend/interface/posts.interface'
 import ListItemList from './managerDashboard/ListItem'
 import { v4 as uuidv4 } from 'uuid';
@@ -7,6 +7,7 @@ import ItemInfo from './pulic/ItemInfo';
 import ShowApplicationList from '../components/managerDashboard/ShowApplicationList'
 
 function ManagerDashboard() {
+  
   const [userNames,setUserNames] = useState<string[] | undefined>()
   const [userName,setUserName] = useState<string>("all")
   const [approval,setApproval] = useState<string>('all')

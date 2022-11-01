@@ -1,6 +1,6 @@
 import type { NextApiRequest,NextApiResponse } from 'next'
 import User from '../../models/user'
-import {UserInterface,SigninInterface,GetAllUserInterface} from '../users/user.interface'
+import {UserInterface,SigninInterface,GetAllUserInterface,GetUserInterface} from '../users/user.interface'
 import connectMongo from '../../utils/connectMongo';
 import hashPassword from '../../utils/auth/hashPassword';
 import isValidPassword from '../../utils/auth/isValidPassword';
@@ -91,6 +91,27 @@ export async function getPermission(id: Schema.Types.ObjectId):Promise<string>{
         }
     })
 }
+
+export async function getUser(req:NextApiRequest):Promise<GetAllUserInterface>{
+    return new Promise(async (resolve,reject) => {
+        const body:GetUserInterface = req.body
+
+        try{
+            //connect mongo 
+            await connectMongo()
+
+            const user = await User.findOne({_id:body.id},"-password")
+            return resolve(user)
+        }
+        catch(err: any){
+            return reject('user not found')
+        }
+    })
+    
+
+
+}
+
 export async function getAllUser():Promise<GetAllUserInterface[]>{
     //connect mongo 
     await connectMongo()

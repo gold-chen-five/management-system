@@ -69,7 +69,6 @@ export async function getApplicationList(req: NextApiRequest):Promise<Applicatio
                 }
                 else{
                     posts = await ApplicationList.find({applicant: userName,approval: approvalB,returned: false})
-
                 }
 
             }

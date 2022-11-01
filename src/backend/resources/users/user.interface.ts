@@ -24,3 +24,7 @@ export interface GetAllUserInterface extends Document {
     permission: string;
 }
 
+export interface GetUserInterface{
+    id: string;
+}
+
