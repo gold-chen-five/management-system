@@ -10,14 +10,14 @@ export async function sendEmail(req: NextApiRequest):Promise<string>{
         const transporter = nodemailer.createTransport({
             service: 'Gmail',
             auth: {
-                user: 'rachel7465022@gmail.com',
-                pass: 'hiklotoqqateupck'
+                user: 'phalanity2@gmail.com',
+                pass: 'soqkujaiwxvbwpeu'
             }
         });
 
         const options = {
             //寄件者
-            from: 'rachel7465022@gmail.com',
+            from: 'phalanity2@gmail.com',
             //收件者
             to: `${body.clientEmail}`, 
             //副本

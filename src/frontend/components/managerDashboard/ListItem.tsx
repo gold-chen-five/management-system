@@ -25,7 +25,7 @@ const ListItemList:React.FC<{
 
             await fetch('api/email/sendEmail',{
                 method: 'POST',
-                body: JSON.stringify({clientEmail: email,method: '簽核同意',text: `${item.item}`}),
+                body: JSON.stringify({clientEmail: email,method: '歸還',text: `${item.item}`}),
                 headers: {'Content-Type': 'application/json'}
             })
           }else{
