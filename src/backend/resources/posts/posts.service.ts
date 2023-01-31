@@ -1,5 +1,6 @@
 import type { NextApiRequest,NextApiResponse } from 'next'
 import ApplicationList from '../../models/applicationList'
+import Counter from '../../models/counter';
 import connectMongo from '../../utils/connectMongo';
 import { ApplicationListInterface,GetApplicationList,ApplicationListId } from './posts.interface'
 import { Schema,Types } from "mongoose"
@@ -10,11 +11,25 @@ export async function addApplicationList(req: NextApiRequest){
     //connect mongo 
     await connectMongo()
 
+
+    //get counter seq
+    let seqId
+    const doc = await Counter.findOneAndUpdate({id: 'postCounter'},{"$inc": {"seq":1}},{new: true})
+    if(doc === null){
+        const newval = new Counter({id:"postCounter", seq: 1})
+        newval.save()
+        seqId=1
+    }
+    else{
+        seqId=doc.seq
+    }
+    
+
     //create post
     try{
         const posts = await ApplicationList.create({
             user_id: new Types.ObjectId(body.user_id),
-            line: body.line,
+            line: seqId,//body.line
             item: body.item,
             specification: body.specification,
             project: body.project,
