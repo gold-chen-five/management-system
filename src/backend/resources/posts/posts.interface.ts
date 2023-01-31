@@ -2,7 +2,6 @@ import { Document } from 'mongoose'
 
 export interface ApplicationListInterface extends Document{
     user_id:  string;
-    // line: string;
     item: string;
     specification: string;
     project: string;

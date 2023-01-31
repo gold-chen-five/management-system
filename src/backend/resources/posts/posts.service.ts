@@ -29,7 +29,7 @@ export async function addApplicationList(req: NextApiRequest){
     try{
         const posts = await ApplicationList.create({
             user_id: new Types.ObjectId(body.user_id),
-            line: seqId,//body.line
+            line: seqId,
             item: body.item,
             specification: body.specification,
             project: body.project,

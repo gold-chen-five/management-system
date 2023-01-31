@@ -4,7 +4,6 @@ import type {Value} from "react-multi-date-picker"
 import toast, { Toaster } from 'react-hot-toast'
 
 const Rent:React.FC<{id:string,name:string}> = ({id,name}) => {
-    //const [line,setLine] = useState<string | undefined>()
     const [item,setItem] = useState<string | undefined>()
     const [specification,setSpecification] = useState<string | undefined>()
     const [project,setProject] = useState<string | undefined>()
@@ -33,7 +32,6 @@ const Rent:React.FC<{id:string,name:string}> = ({id,name}) => {
    const fetchApplicationList = async () => {
     const list = {
         user_id: id,
-        // line: line,
         item: item,
         specification: specification,
         project: project,
@@ -63,7 +61,6 @@ const Rent:React.FC<{id:string,name:string}> = ({id,name}) => {
                         padding: '20px'
                     }
                 })
-                // setLine('')
                 setRenderDate('借出日期')
                 setRenderReturnDate('歸還日期')
                 setItem('')
@@ -91,7 +88,6 @@ const Rent:React.FC<{id:string,name:string}> = ({id,name}) => {
                     padding: '20px'
                 }
             })
-            // setLine('')
             setRenderDate('借出日期')
             setRenderReturnDate('歸還日期')
             setItem('')
@@ -108,7 +104,6 @@ const Rent:React.FC<{id:string,name:string}> = ({id,name}) => {
    }
     const onClickApplication = async () => {
         if(
-            // line === undefined ||
             item === undefined ||
             specification === undefined ||
             project === undefined ||
@@ -162,11 +157,6 @@ const Rent:React.FC<{id:string,name:string}> = ({id,name}) => {
     return (
         <div className='w-full h-full flex flex-col items-center pt-10 pb-10 space-y-4 sm:pt-28'>
             <Toaster position='top-center'/>
-            {/* <input type="text" className='bg-[#27272A] w-1/2 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold sm:w-5/6'
-                placeholder='項次'
-                onChange={e => setLine(e.target.value)}
-                value={line}
-            /> */}
             <input type="text" className='bg-[#27272A] w-1/2 h-10 placeholder-[#97979e] border border-[#3F3F46] rounded-lg outline-none text-[#D4D4D2] pl-4 pr-4 font-fontJapan font-semibold sm:w-5/6'
                 placeholder='項目'
                 onChange={e => setItem(e.target.value)}
