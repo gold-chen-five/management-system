@@ -49,7 +49,7 @@ const Home: NextPage = () => {
               <p className=''>官網</p>
             </a>
           </div>
-          
+          <p className='text-white font-fontJapan font-bold text-xl w-full text-center'>測試帳密:test@gmail.com, test</p>
         </div>
        
       </main>
